@@ -1,9 +1,9 @@
 import express from "express";
 import path from "node:path";
-import { PORT } from "./config";
-import { initDb } from "./db";
-import { errorHandler } from "./errorHandler";
-import { resumeDeliveries } from "./orders";
+import { PORT } from "./config/config";
+import { initDb } from "./db/database";
+import { errorHandler } from "./middlewares/error-handler";
+import { resumeDeliveries } from "./services/orders.service";
 import { router } from "./routes";
 
 const app = express();

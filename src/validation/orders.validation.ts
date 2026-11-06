@@ -1,4 +1,4 @@
-import { ValidationError } from "./errors";
+import { ValidationError } from "../errors/app-errors";
 
 export type NewOrderInput = {
   userId: number;

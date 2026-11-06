@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
-import { subscribe } from "./events";
-import type { ShopEvent } from "./events";
+import { subscribe } from "../events/event-bus";
+import type { ShopEvent } from "../events/event-bus";
 
 const subscribers = new Set<Response>();
 
