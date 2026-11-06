@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { getProducts, getUsers } from "./db";
 import { advanceOrder, cancelOrder, createOrder, getOrder, listOrders } from "./orders";
+import { openStream } from "./sse";
 import { parseId, parseNewOrder } from "./validation";
 
 export const router = Router();
@@ -32,4 +33,19 @@ router.post("/orders/:id/advance", async (req, res) => {
 
 router.post("/orders/:id/cancel", async (req, res) => {
   res.json(await cancelOrder(parseId(req.params.id)));
+});
+
+router.get("/events", (req, res) => {
+  openStream(req, res, () => true);
+});
+
+router.get("/orders/:id/events", async (req, res) => {
+  const id = parseId(req.params.id);
+  const order = await getOrder(id);
+  openStream(
+    req,
+    res,
+    (event) => event.name !== "stock:updated" && event.data.id === id,
+    { name: "order:status", data: order },
+  );
 });
