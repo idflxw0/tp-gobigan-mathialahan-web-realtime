@@ -1,11 +1,11 @@
-import { DELIVERY_DELAY_MS } from "./config";
-import { getOrders, getProducts, getUsers, saveOrders, saveProducts } from "./db";
-import type { Status } from "./enums";
-import { ConflictError, NotFoundError } from "./errors";
-import { publish } from "./events";
-import { withLock } from "./lock";
-import type { Order, Product } from "./types";
-import type { NewOrderInput } from "./validation";
+import { DELIVERY_DELAY_MS } from "../config/config";
+import { getOrders, getProducts, getUsers, saveOrders, saveProducts } from "../db/database";
+import type { Status } from "../enums/status";
+import { ConflictError, NotFoundError } from "../errors/app-errors";
+import { publish } from "../events/event-bus";
+import { withLock } from "../utils/lock";
+import type { Order, Product } from "../types/models";
+import type { NewOrderInput } from "../validation/orders.validation";
 
 const NEXT_STATUS: Record<Status, Status | null> = {
   preparing: "shipped",
