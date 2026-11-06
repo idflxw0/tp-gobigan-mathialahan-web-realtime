@@ -1,7 +1,7 @@
 import path from "node:path";
 import { Config, JsonDB } from "node-json-db";
 import { SEED_PRODUCTS, SEED_USERS } from "./seeds";
-import type { Order, Product, User } from "./types";
+import type { Order, Product, User } from "../types/models";
 
 const DATA_DIR = process.env.DATA_DIR ?? path.join(__dirname, "..", "data");
 

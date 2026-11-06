@@ -1,4 +1,4 @@
-import type { Product, User } from "./types";
+import type { Product, User } from "../types/models";
 
 export const SEED_USERS: User[] = [
   { id: 1, name: "Alice Martin", username: "alice", email: "alice@example.com" },
