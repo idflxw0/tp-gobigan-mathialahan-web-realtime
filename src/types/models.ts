@@ -1,4 +1,4 @@
-import type { Status } from "./enums";
+import type { Status } from "../enums/status";
 
 export type User = {
   id: number;
