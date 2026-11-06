@@ -1,0 +1,17 @@
+body { font-family: system-ui, sans-serif; max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #1f2933; }
+h1, h2 { margin-bottom: 0.5rem; }
+table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+th, td { text-align: left; padding: 0.4rem 0.6rem; border-bottom: 1px solid #d9dee3; }
+form { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+button, select, input { padding: 0.4rem 0.7rem; font: inherit; }
+.error { color: #b42318; min-height: 1.2rem; }
+.badge { display: inline-block; padding: 0.15rem 0.6rem; border-radius: 999px; color: #fff; font-weight: 600; }
+.preparing { background: #b7791f; }
+.shipped { background: #2b6cb0; }
+.delivered { background: #2f855a; }
+.cancelled { background: #c53030; }
+.card { border: 1px solid #d9dee3; border-radius: 8px; padding: 1rem 1.25rem; }
+.card dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1rem; margin: 0; }
+.card dt { font-weight: 600; }
+.card dd { margin: 0; }
+.connection { font-size: 0.85rem; color: #52606d; margin-top: 0.75rem; }
